@@ -1,0 +1,430 @@
+.body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    margin-left: 2em;
+}
+
+.media-object{
+    height: 88px;
+    width: 88px;
+    float: left;  
+    margin-top: 2em;
+}
+
+.foto-ranking{/* cambiado */
+    float:left;
+}
+
+.caja{ /*cambiado*/
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    width: 88px;
+    height: 20px;
+    text-align: center;
+    float:left;
+
+}
+.numero { /* cambiado */
+    position: relative;
+    font: bold 18px Ubuntu, Sans-Serif;
+
+}
+.corona{ /* cambiado */
+   width: 1.3em;
+}
+
+.id{
+    width: 1.3em;
+    height: auto;
+    
+}
+
+.home{
+    margin-top: 1em;
+}
+
+.encabezado {
+   font-weight: bold;
+   background-color: #14474b;
+}
+
+.barra{
+   background-color: #219198;
+   height: 10.5em;
+}
+
+.margen-usuario{
+    margin-right: 2em;
+    float: left;
+}
+
+.barratop{
+    width: 88px;
+}
+.usuario{ /* cambiado */
+    margin-left: 0;
+    padding-left: 30em;
+}
+
+.usuario-top-foto{
+    height: 90px;
+    width: 90px;
+    margin-top: 2.3em;
+    border-radius: 50%;
+}
+
+.usuario-top-foto2{
+    height: 90px;
+    width: 90px;
+    margin-top: 2.3em;
+    border-radius: 50%;
+    margin-left: -2em;
+}
+
+
+.usuario-top-txt{
+    margin-top: 2.3em;
+    font-size: 1.3em;
+    color: white;
+}
+
+.barra-progreso{
+    color: #14474b;
+    font-weight: bold;
+    font-size: 1.4em;
+    
+}
+
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ height:300px;              
+ display: -moz-groupbox;
+}
+
+.estilo-tabla tbody{
+  overflow-y: scroll;      
+  height: 350px;            
+  width: 100%;
+  position: absolute;
+  background-color: #219198;
+  text-justify: inter-word;
+}
+
+.retos-recientes{
+    background-color: #219198;
+    height: 5em;
+    overflow-y: scroll;
+}
+
+.titulo-retos{
+    background-color: #14474b;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.foto-recientes{
+    height: 70px;
+    width: 70px;
+    margin-top: 0.5em;
+    border-radius: 50%;
+    margin-left: 1em;
+}
+
+.descrip-reto{
+    font-weight: bold;
+    color: white;
+    font-size: 0.9em;
+}
+
+.fecha-reto{
+    font-weight: bold;
+}
+
+.emblemas-lateral{
+    height: 5em;
+    width: auto;
+    margin-left: 1em;
+}
+
+.puntuacion{
+    color: #76FF03;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.mejora{
+    color: #76FF03;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.mi-nivel{
+    background-color: #ebebeb;    
+    height: 12em;
+    padding: 1em;
+}
+
+.img-medal{
+    width: 8em;
+    height: auto;
+    display: block;
+}
+
+.jcarousel-wrapper {
+    margin:  0;
+    position: relative;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;    
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 100%;
+    margin-top: -7em;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    background: #14474b;;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Ubuntu, sans-serif;
+    font-weight: bold;
+}
+
+.jcarousel-control-prev-retos,
+.jcarousel-control-next-retos {
+    position: absolute;
+    top: 100%;
+    margin-top: -7em;
+    width: 20px;
+    height: 100%;
+    text-align: center;
+    background: #14474b;;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Ubuntu, sans-serif;
+    font-weight: bold;
+   
+}
+
+.jcarousel-control-prev {
+    padding-top: 3em;
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    padding-top: 3em;
+    right: 15px;
+}
+
+.puntuacion-medallas{
+    text-align: center;
+    font: 1.3em Ubuntu, sans-serif;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+
+.nav-tabs > li {
+   float: right;
+   background-color: #14474b;
+}
+
+.nav-tabs > li > a {
+   
+   line-height: 1.42857143;
+   border: 0px solid transparent;
+   border-radius: 4px 4px 0 0;
+   color: white;
+}
+
+.nav-tabs > li.active > a {
+   color: #14474b ;
+   cursor: default;
+   background-color: #219198 ;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+   color: #14474b ;
+   cursor: default;
+   background-color: #219198 ;
+   border: 0px solid #ddd;
+}
+
+.nav-tabs > li > a:hover {
+   color: #14474b ;
+}
+
+.nav-tabs {
+   border-bottom: 0px solid #ddd;
+}
+
+.botones{
+    width: 10em;
+}
+.btn-default {
+   color: white;
+   background-color: #14474b ;
+   border: 3px solid white;
+   border-color: white;
+   border-radius: 0;
+   font-size:15px;
+
+   height:35px;
+   line-height: 0px;
+}
+
+.btn-default:hover {
+   color: #14474b ;
+   background-color: #e6e6e6 ;
+   border-color: #adadad ;
+}
+
+.btn-primary {
+   color: #fff;
+   background-color: #219198 ;
+   border: 3px solid white;
+   border-color: #14474b ;
+   border-radius: 0;
+   font-size:15px;
+   width:100px;
+   height:35px;
+   line-height: 0px;
+}
+
+.btn-primary:hover {
+   color: #219198 ;
+   background-color: #e6e6e6 ;
+   border-color: #adadad ;
+}
+
+.img_icono{
+   float: left;
+}
+
+.margen-retos{
+    margin-top: 3em;
+}
+
+.margen-img-retos{
+    margin-left: 4em;
+    margin-top: 1em;
+}
+
+.retos{
+    background-color: #ebebeb;    
+    height: 12em;
+}
+
+.img-retos{
+    height: 8em;
+    width: auto;
+    margin-bottom: 0.8em;
+}
+
+.img-retos-futuros{
+    height: 10em;
+    width: auto;
+    
+}
+
+/*ALMACENES*/
+
+.titulo-centro{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-align: right;
+    
+}
+
+.calendario{
+    background-color: white;
+    color: red;
+}
+.titulo-empresa{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-align: left;   
+}
+
+.center-aligned {
+    display: flex;
+    align-items: center;
+}
+.positivo{
+    color: lawngreen;
+}
+.negativo{
+    color: red;
+}
+.barra-bottom{
+    background-color: #14474b;
+    color: white;
+}
+.espacio{
+  height: 0.5em;  
+}
+.select-menu{
+    color: #14474b;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;   
+}
+
+.recuadro{
+    margin: 1em;
+}
+
+.icono{
+    margin-right: 1em;
+}
+.parte-nferior{
+    display: flex;
+    align-items: center;
+}
+.centro{
+    text-align: center;
+}
+.recuadro{
+    background-color: #14474b;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: white;
+}

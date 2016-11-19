@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+        <meta charset="utf-8"></meta>
+        <title>Panel de Administración</title>
+        <meta name="generator" content="Bootply"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>  
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="estiloPropio.css"></h:outputStylesheet>  
+        
+        <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </h:head>
+    
+    <h:body>
+        
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p:commandButton type="button" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </p:commandButton>
+                    <a class="navbar-brand" href="#">Mi panel de Administración</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                            <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                                <li><a href="#">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <!-- Left column -->
+                    <!--<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Opciones</strong></a>-->
+
+                    <ul class="nav nav-stacked">
+                        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administración <i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <ul class="nav nav-stacked collapse in" id="userMenu">
+                                <li><a href="index.xhtml"><i class="glyphicon glyphicon-th"></i> Tipo de actividad</a></li>
+                                <li><a href="consulta_reto.xhtml"><i class="glyphicon glyphicon-stats"></i> Retos usuario</a></li>
+                                <li><a href="consulta_mellaUser.xhtml"><i class="glyphicon glyphicon-user"></i> Medalla usuario</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-tower"></i> Medalla almacén</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-usd"></i> Recompensa</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /col-2 -->
+                <div class="col-sm-9">
+
+                    <!-- column 2 -->
+
+                    <a href="#"><strong><i class="glyphicon glyphicon-dashboard" id="label"></i> Crear Reto</strong></a>
+                    <hr></hr>
+                    
+                    <div class="row">
+                        <!-- center left-->
+                        <div class="col-md-6">
+                            <!-- AQUÍ METO MI CONTENIDO-->
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="titulo">
+                                        <h4>Reto</h4></div>
+                                    <div class="panel-body">
+                                        <h:inputTextarea rows="1" cols="15" id="reto" value="#{beanNewReto.RetosSelec}"
+                                                         label="Nombre del reto" required="true"></h:inputTextarea>
+                                    </div>
+                                    <!--/panel-body-->
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="titulo">
+                                        <h4>Centros</h4>
+                                    </div>
+                                    <div class="panel-body">   
+                                        <h:selectManyCheckbox value="#{beanNewReto.CentrosSelec}"> 
+                                            <!-- En "beanNewAct.Centros" se cargarán los values chequeados -->   <!--cada n va a ser un javabean-->
+                                            <f:selectItems value="#{beanNewReto.Centros}" var="n"  
+                                            itemLabel="#{n.nombreCentro}" itemValue="#{n.idCentro}"/>
+                                        </h:selectManyCheckbox>
+
+                                        <h:inputText id="actividad"  value="#{beanNewReto.Reto}"/>
+                                        <!-- aquí irá el BEAN llamado "beanNewAct" -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/panel-->
+                        </div>
+                        <!--/col-->
+                        
+                    </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Valores</h4></div>
+                                    <div class="panel-body">                <!-- CAMBIAR ESTO-->                                                
+                                            Introduce niveles de consecución:
+                                            <br></br>
+                                            <br></br>
+                                            Mínimo <h:inputText required="required" value="#{beanNewReto.xxx}" size="6" ></h:inputText>
+                                                <h:outputLabel for="number" value="Mínimo" style="font-weight:bold"/>                    
+                                                <h:inputText id="number" value="#{beanNewReto.valorMin}" label="Number">
+                                                </h:inputText>
+                                            <h:outputText value="#{beanNewReto.integer}" />
+                                            <p></p>
+                                            Máximo <h:inputText required="required" value="#{beanNewReto.xxx}" size="6" maxlength="6"></h:inputText>
+                                                <h:outputLabel for="number" value="Máximo" style="font-weight:bold"/>        
+                                    </div>
+                            </div>
+                        </div> 
+
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Fecha</h4></div>
+                                    <div class="panel-body">   
+                                            Introduce fechas para establecer Reto:
+                                            <br></br>
+                                            <br></br>
+                                            <p:outputLabel for="fechaInicio" value="Inicio" />
+                                            <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2" accesskey="true"
+                                                        id="fechaInicio" value="#{calendarView.fechaInicio}" required="requiered" mindate="2016-01-01">
+                                                 <p:ajax event="dateSelect" oncomplete="onDateSelect()" id="calendario"></p:ajax>
+                                            </p:calendar>
+                                            <br></br>
+                                            <p:outputLabel for="fechaFin" value="Fin" />
+                                            <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2" accesskey="true"
+                                                        id="fechaFin" value="#{calendarView.fechaFin}" required="requiered" mindate="fechaInicio"> 
+                                                <p:ajax event="dateSelect" oncomplete="onDateSelect()" id="calendario"></p:ajax>
+                                            </p:calendar>
+                                    </div>
+                            </div>
+                        </div>
+      
+                    <!--/row-->       
+                    <div class="row">
+                        <center>
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-justified" style="width:300px; margin-left: -10%">
+                                <p:commandButton class="btn btn-primary col-sm-3" id="boton" value="Cerrar" update="msgs" 
+                                        action="consulta_reto.xhtml" icon="glyphicon glyphicon-remove iconBlanco">
+                                    <i class="glyphicon glyphicon-remove iconBlanco"></i>
+                                </p:commandButton> 
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-justified" style="width: 300px; margin-left:7.5%">
+                                <p:commandButton class="btn btn-primary col-sm-3" id="boton" value="Guardar" update="msgs"
+                                     action="#{beanNewReto.guardarReto}" icon="glyphicon glyphicon-floppy-disk iconBlanco">
+                                    <i class="glyphicon glyphicon-floppy-disk iconBlanco"></i>
+                                </p:commandButton>
+                            </div> 
+                        </div>
+                        </center>
+                    </div>
+                </div>
+                <!--/col-span-9-->
+            </div>
+        </div>
+
+        <div class="modal" id="addWidgetModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p:commandButton class="close">×</p:commandButton>
+                        <h4 class="modal-title">Add Widget</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Add a widget stuff here..</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn">Close</a>
+                        <a href="#" class="btn btn-primary">Save changes</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dalog -->
+        </div>
+
+    </h:body>
+</html>
+

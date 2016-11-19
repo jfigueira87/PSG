@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"   
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>  
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+        <meta charset="utf-8"></meta>
+        <title>Panel de Administración</title>
+        <meta name="generator" content="Bootply"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+        <!--[if lt IE 9]>
+                <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<!--        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="css/bootstrap.css" rel="stylesheet"></link>
+        <link href="css/styles.css" rel="stylesheet"></link>
+        <link href="css/estiloPropio.css" rel="stylesheet"></link>-->
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>  
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="estiloPropio.css"></h:outputStylesheet>  
+        
+         <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </h:head>
+
+    <h:body>
+        <!-- header -->
+        <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mi panel de Administración</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                            <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                                <li><a href="#">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <!-- Left column -->
+                    <!--<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Opciones</strong></a>-->
+
+                    <ul class="nav nav-stacked">
+                        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administración <i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <ul class="nav nav-stacked collapse in" id="userMenu">
+                                <li><a href="#"><i class="glyphicon glyphicon-th"></i> Tipo de actividad</a></li>
+                                <li><a href="consulta_reto.xhtml"><i class="glyphicon glyphicon-stats"></i> Retos usuario</a></li>
+                                <li><a href=""><i class="glyphicon glyphicon-user"></i> Medalla usuario</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-tower"></i> Medalla almacén</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-usd"></i> Recompensa</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /col-2 -->
+                <div class="col-sm-9">
+                    <h:form>
+                    <!-- column 2 -->
+                    <ul class="list-inline pull-right">
+                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">1. Is there a way..</a></li>
+                                <li><a href="#">2. Hello, admin. I would..</a></li>
+                                <li><a href="#"><strong>All messages</strong></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+                        <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span> Add Widget</a></li>
+                    </ul>
+                    <a href="#"><strong><i class="glyphicon glyphicon-dashboard" id="label"></i> Tipo de Actividad</strong></a>
+                    <hr></hr>
+
+                    <div class="row">
+                        <!-- center left-->
+                        <div class="col-md-6">
+                            <!-- AQUÍ METO MI CONTENIDO-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Centros</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <h:selectManyCheckbox value="#{beanActividades.CentrosSelec}">
+                                    <!-- En "beanNewAct.Centros" se cargarán los values chequeados -->
+                                    <f:selectItems value="#{beanActividades.Centros}" var="n"
+                                    itemLabel="#{n.nombreCentro}" itemValue="#{n.idCentro}"/>
+                                    </h:selectManyCheckbox>
+                                </div>
+                                <!--/panel-body-->
+                            </div>
+                            <!--/panel-->
+         
+                        </div>
+                        <!--/col-->
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Actividad</h4></div>
+                                <div class="panel-body">
+                                    <h:selectManyCheckbox value="#{beanActividades.ActividadesSelec}">
+                                    <f:selectItems value="#{beanActividades.Actividades}" var="n"
+                                    itemLabel="#{n.nombreAct}" itemValue="#{n.idAct}" />
+                                    </h:selectManyCheckbox>                            
+                                </div>
+                                <!--/panel-body-->
+                            </div>
+                            <div class="btn-group btn-group-justified">
+                         <!--         <h:selectManyCheckbox value="#{beanNewAct.CentrosSelec}"> -->
+           <!-- En "beanNewAct.Centros" se cargarán los values chequeados -->
+                    <!--               <f:selectItems value="#{beanNewAct.Centros}" var="n"
+                                    itemLabel="#{n.nombreCentro}" itemValue="#{n.idCentro}" />
+                                </h:selectManyCheckbox>
+
+                               <h:form>
+                                  <h:inputText id="actividad"  value="#{beanNewAct.Actividad}"/>
+                                </h:form>
+                                
+                               <div class="col-md-8">
+                                    <div class="control-group">
+                                        <center>
+                                            <div class="controls" style="width:300%; margin: 0 auto;">
+                                                <button type="submit" class="btn btn-primary" style="width:150px; margin: 0 auto;"
+                                                        action="#{actividad.cerrarActividad}">
+                                                    <h4 class="glyphicon glyphicon-search">Cerrar</h4>
+                                                </button>
+                                            </div>
+                                            <div class="controls" style="width:300%; margin: 0 auto;">
+                                                <button type="submit" class="btn btn-primary" style="width:150px; margin: 0 auto;"
+                                                        action="#{actividad.guardarActividad}">
+                                                    <h4 class="glyphicon glyphicon-search">Guardar</h4>
+                                                </button>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                        -->
+                            </div> 
+                        </div>
+                    </div>
+  <!--/row--><!-- MODIFICAR!!! -->
+                    <div class="row">
+                        <div class="btn-group btn-group-justified" style="width: 300px; margin-left: 35%">
+                            <a href="#" class="btn btn-primary col-sm-3" id="boton"
+                               action="#{beanActividades.consultaActividad}">
+                                <i class="glyphicon glyphicon-search iconBlanco"></i>
+                                <br/> Consultar
+                            </a> 
+                        </div>
+                    </div>
+                        <br></br>
+                     <div class="row">
+                        <div class="btn-group btn-group-justified" style="width: 300px; margin-left: 35%">
+                            <a href="#" class="btn btn-primary col-sm-3" id="boton">
+                                <i class="glyphicon glyphicon-plus iconBlanco"></i>
+                                <br/> Crear nueva actividad
+                                
+                            </a> 
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h1>JSF 2 dataTable - MUESTRA DATOS</h1>
+
+                            <h:dataTable value="#{beanActividades.mostrarActividades}" var="o"
+                                         styleClass="order-table"
+                                         headerClass="order-table-header"
+                                         rowClasses="order-table-odd-row,order-table-even-row">
+
+                                <h:column>
+                                    <!-- column header -->
+                                    <f:facet name="header">Resultados búsqueda</f:facet>
+                                    <!-- row record -->
+                                    #{o.orderNo} <!--CAMBIAR-->
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Centro</f:facet>
+                                        #{o.centro}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Actividad</f:facet>
+                                        #{o.actividad}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Niveles consecución</f:facet>
+                                        #{o.nivelescon}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Acciones</f:facet>
+                                        #{o.acciones}
+                                </h:column>
+
+                                <h:commandButton value="Crear actividad" type="submit" action="#{beanActividades.crearActividad}" />
+
+                            </h:dataTable>
+
+                        </div>
+                    </div>
+                    </h:form>
+                </div>
+                <!--/col-span-9-->
+            </div>
+        </div>
+        <!-- /Main -->
+        
+        <div class="modal" id="addWidgetModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Widget</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Add a widget stuff here..</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn">Close</a>
+                        <a href="#" class="btn btn-primary">Save changes</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dalog -->
+        </div>
+
+    </h:body>
+</html>
+

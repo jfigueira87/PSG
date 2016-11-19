@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Mi Actividad</title>
+        <meta charset="UTF-8"></meta>
+        <f:loadBundle basename="textos.mensajes" var="msj"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+
+        <!-- Latest compiled and minified CSS -->
+
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="js" name="Chart.js"></h:outputStylesheet>
+        <h:outputStylesheet library="css" name="custom_Usuarios.css"></h:outputStylesheet>  
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </h:head>
+
+    <h:body>
+        <f:facet name="last">
+            <h:outputStylesheet library="resources" name="css/custom_Graficas.css"></h:outputStylesheet>
+            <h:outputStylesheet library="resources" name="css/custom_Graficas2.css"></h:outputStylesheet>
+        </f:facet>
+        <nav class="encabezado">
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#"  role="tab" data-toggle="tab"><h:graphicImage class="id" value="resources/img/icons/user.png"/></a></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgUsuarios}"></h:outputText></h:outputLink></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgAlmacenes}"></h:outputText></h:outputLink></li>
+                    <li role="presentation" class="active"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.miActividad}"></h:outputText></h:outputLink></li>  
+                </ul>
+            </div>
+        </nav>
+
+        <div class="barra container-fluid">
+            <div class="row center-aligned">
+                <div class="col-md-2"></div>
+                <h:outputText class="col-md-1 titulo-centro" value="#{msj.centro}"></h:outputText>
+                <h:selectOneMenu class="col-md-2 select-menu" value="#">
+                    <f:selectItem itemValue="1" itemLabel="Enero 2016" />
+                    <f:selectItem itemValue="2" itemLabel="Febrero 2016" />
+                    <f:selectItem itemValue="3" itemLabel="Marzo 2016" />
+                    <f:selectItem itemValue="4" itemLabel="Abril 2016" />
+                    <f:selectItem itemValue="5" itemLabel="Mayo 2016" />
+                    <f:selectItem itemValue="6" itemLabel="Junio 2016" />
+                    <f:selectItem itemValue="7" itemLabel="Julio 2016" />
+                    <f:selectItem itemValue="8" itemLabel="Agosto 2016" />
+                    <f:selectItem itemValue="9" itemLabel="Septiembre 2016" />
+                    <f:selectItem itemValue="10" itemLabel="Octubre 2016" />
+                    <f:selectItem itemValue="11" itemLabel="Noviembre 2016" />
+                    <f:selectItem itemValue="12" itemLabel="Diciembre 2016" />
+                </h:selectOneMenu>
+                <div class="col-md-3"></div>
+                <div class="margen-usuario">
+                    <div class=" col-md-5">
+                        <h:graphicImage class="usuario-top-foto" style="border: #14474b 0.4em solid;" value="resources/img/Fotos-Usuarios/mujer7.jpg" alt="Foto del Usuario"/> <!--CAMBIAR EL COLOR DEL BORDE (SI MEJORA VERDE, SI EMPEORA ROJO)-->   
+                    </div>
+                    <div class="usuario-top-txt col-md-2">
+                        <h:outputText value="Daniela García"></h:outputText> <!--AQUÍ HAY QUE SELECCIONAR EL NOMBRE DEL USUARIO-->
+                        <div class="progress barratop">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><!--PORCENTAJE DE PROGRESO-->
+                                <h:outputText class="barra-progreso" value="Nº16"></h:outputText><!--POSICIÓN EN EL RANKING-->
+                            </div>
+                            <div class="usuario-top-txt col-md-2"> 
+                            <h:outputText class="puntuacion" value="136 Puntos"></h:outputText> <!--PUNTUACIÓN TOTAL DEL USUARIO-->
+                            <h:outputText class="mejora" value="+ 100%"></h:outputText> <!--PORCENTAJE DE MEJORA-->
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!--        GRAFICA  PRINCIPAL       -->
+
+        <div class="row center-aligned">
+            <div class="col-md-10 col-md-offset-1 Grafica">
+                <p:chart type="bar" model="#{barBean.barModel}" style="height:300px" styleClass="custom_Graficas"/>
+            </div>           
+        </div>
+
+        <!--    GRAFICAS INFERIORES     -->
+        
+        <!--        RECUADRO            -->
+
+        <div class="row container-fluid">
+            <div class="col-md-3">
+                <h:outputText class="titulo-centro parte-nferior" value="#{msj.resumenTrabajo}"></h:outputText>
+                <div>
+                    <div class="row">
+                        <div  class="col-md-1">
+                            <h:graphicImage class="icono" value="resources/img/miActividad/cronometro.png" alt="icono"></h:graphicImage>
+                        </div>
+                        <div  class="col-md-10">
+                            <h:outputText value="8 horas 15 minutos de movimiento"></h:outputText>
+                        </div>   
+                    </div>
+                    <div class="row">
+                        <div  class="col-md-1">
+                            <h:graphicImage class="icono" value="resources/img/miActividad/grafica.png" alt="icono"></h:graphicImage>
+                        </div>
+                        <div  class="col-md-10">
+                            <h:outputText  value="10 usuarios"></h:outputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div  class="col-md-1">
+                            <h:graphicImage class="icono" value="resources/img/miActividad/distancia.png" alt="icono"></h:graphicImage>
+                        </div>
+                        <div  class="col-md-10">
+                            <h:outputText value="26.9 Km registrados"></h:outputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div  class="col-md-1">
+                            <h:graphicImage class="icono" value="resources/img/miActividad/llama.png" alt="icono"></h:graphicImage>
+                        </div>
+                        <div  class="col-md-10">
+                            <h:outputText value="5948 Kilocalorías quemadas"></h:outputText>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+        <!--            GRAFICA BARRAS HORIZONTALES         -->
+
+            <div class="col-md-4">
+                <h:outputText class="center-block titulo-centro centro" value="#{msj.frecuenciaCardiaca}"></h:outputText>
+                <div class="grafica">
+                    <p:chart type="bar" model="#{barHorizontalBean.horizontalBarModel}" style="height:300px"/>
+                </div>
+            </div> 
+
+        <!--        GRAFICA DONUT       -->
+        
+            <div class="col-md-4">
+                <h:outputText class="center-block titulo-centro centro" value="#{msj.eficiencia}"></h:outputText>
+                <div class="grafica">
+                    <p:chart type="donut" model="#{donutBean1.donutModel1}" style="width:400px;height:300px;" styleClass="custom_Graficas2"/>
+                </div>
+            </div> 
+        </div>
+        
+    </h:body>
+</html>
+

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <f:loadBundle basename="textos.mensajes" var="msj"/>
+    <h:head>
+        <title>Ranking Usuarios</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="resources/js/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="resources/js/jcarousel.js"></script>
+
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+        <h:outputStylesheet library="css" name="custom_Usuarios.css"></h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <nav class="encabezado">
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#"  role="tab" data-toggle="tab"><h:graphicImage class="id" value="resources/img/icons/user.png"/></a></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgUsuarios}"></h:outputText></h:outputLink></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgAlmacenes}"></h:outputText></h:outputLink></li>
+                    <li role="presentation" class="active"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.miActividad}"></h:outputText></h:outputLink></li>  
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="barra container-fluid">
+            <div class="row">
+                <div class="tab-content">
+                    <div  class="col-md-2">
+                        <h:graphicImage class="logo" value="resources/img/icons/COMMUNITY.svg" alt="Logo Comunidad"/>
+                    </div>
+                    <div class="col-md-1 botones">
+                        <div role="tabpanel" class="tab-pane active home">
+                            <h:commandButton  class="btn btn-default btn-lg btn-block" value="#{msj.diario}"></h:commandButton>
+                            <h:commandButton  class="btn btn-default btn-lg btn-block" value="#{msj.semanal}"></h:commandButton>
+                            <h:commandButton  class="btn btn-primary btn-lg btn-block" value="#{msj.mensual}"></h:commandButton>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">  
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/hombre1.jpg" alt="Foto del Empleado 1"/>
+                        <div class="caja"><h:graphicImage class="corona" value="resources/img/icons/corona.svg"/></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/mujer2.jpg" alt="Foto de la Empleada 2"/>
+                        <div class="caja"><h:outputText class="numero" value="2"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/hombre3.jpg" alt="Foto del Empleado 3"/>
+                        <div class="caja"><h:outputText class="numero" value="3"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/mujer5.jpg" alt="Foto del Empleado 4"/>
+                        <div class="caja"><h:outputText class="numero" value="4"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/mujer4.jpg" alt="Foto del Empleado 5"/>
+                        <div class="caja"><h:outputText class="numero" value="5"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/Fotos-Usuarios/hombre5.jpg" alt="Foto del Empleado 6"/>
+                        <div class="caja"><h:outputText class="numero" value="6"></h:outputText></div>
+                    </div>            
+                </div> 
+
+                <div class="margen-usuario">
+                    <div class=" col-md-5">
+                        <h:graphicImage class="usuario-top-foto" style="border: #14474b 0.4em solid;" value="resources/img/Fotos-Usuarios/mujer7.jpg" alt="Foto del Usuario"/> <!--CAMBIAR EL COLOR DEL BORDE (SI MEJORA VERDE, SI EMPEORA ROJO)-->   
+                    </div>
+                    <div class="usuario-top-txt col-md-2">
+                        <h:outputText value="Daniela García"></h:outputText> <!--AQUÍ HAY QUE SELECCIONAR EL NOMBRE DEL USUARIO-->
+                        <div class="progress barratop">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><!--PORCENTAJE DE PROGRESO-->
+                                <h:outputText class="barra-progreso" value="Nº16"></h:outputText><!--POSICIÓN EN EL RANKING-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <aside class="estilo-tabla">
+                    <br>           
+                        <table class="col-md-3 retos-recientes">
+                            <caption class="titulo-retos"><h:outputText value="#{msj.retosRecientes}"></h:outputText></caption>
+                            <tr>
+                                <td>
+                                    <h:graphicImage class="foto-recientes" value="resources/img/Fotos-Usuarios/mujer5.jpg" alt="Foto del Empleado 4"/>
+                                </td>
+                                <td>
+                                    <h:outputText class="descrip-reto" value="Carla #{msj.retoConseguido1}"></h:outputText><!--NOMBRE DEL USUARIO Y TEXTO RANDOM-->
+                                    <br/>
+                                    <h:outputText value="26/10/2016" class="fecha-reto"></h:outputText> <!--FECHA DE RETO CONSEGUIDO-->
+                                </td>
+                                <td>
+                                    <h:graphicImage class="emblemas-lateral" value="resources/img/emblemas/HORAS EXTRA.svg" alt="Emblema Horas Extra"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:graphicImage class="foto-recientes" value="resources/img/Fotos-Usuarios/hombre5.jpg" alt="Foto del Empleado 6"/>
+                                </td>
+                                <td>
+                                    <h:outputText class="descrip-reto" value="José #{msj.retoConseguido2}"></h:outputText><!--NOMBRE DEL USUARIO Y TEXTO RANDOM-->
+                                    <br/>
+                                    <h:outputText value="24/10/2016" class="fecha-reto"></h:outputText> <!--FECHA DE RETO CONSEGUIDO-->
+                                </td>
+                                <td>
+                                    <h:graphicImage class="emblemas-lateral" value="resources/img/emblemas/EXPERIENCIA.svg" alt="Emblema Experiencia"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:graphicImage class="foto-recientes" value="resources/img/Fotos-Usuarios/mujer4.jpg" alt="Foto del Empleado 5"/>
+                                </td>
+                                <td>
+                                    <h:outputText class="descrip-reto" value="María #{msj.retoConseguido3}"></h:outputText><!--NOMBRE DEL USUARIO Y TEXTO RANDOM-->
+                                    <br/>
+                                    <h:outputText value="21/10/2016" class="fecha-reto"></h:outputText> <!--FECHA DE RETO CONSEGUIDO-->
+                                </td>
+                                <td>
+                                    <h:graphicImage class="emblemas-lateral" value="resources/img/emblemas/DESVIO TEMPORAL.svg" alt="Emblema Desvío Temporal"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:graphicImage class="foto-recientes" value="resources/img/Fotos-Usuarios/mujer2.jpg" alt="Foto de la Empleada 2"/>
+                                </td>
+                                <td>
+                                    <h:outputText class="descrip-reto" value="Elena #{msj.retoConseguido4}"></h:outputText><!--NOMBRE DEL USUARIO Y TEXTO RANDOM-->
+                                    <br/>
+                                    <h:outputText value="20/10/2016" class="fecha-reto"></h:outputText> <!--FECHA DE RETO CONSEGUIDO-->
+                                </td>
+                                <td>
+                                    <h:graphicImage class="emblemas-lateral" value="resources/img/emblemas/COMPROMISO.svg" alt="Emblema Comprimiso"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:graphicImage class="foto-recientes" value="resources/img/Fotos-Usuarios/hombre3.jpg" alt="Foto del Empleado 3"/>
+                                </td>  
+                                <td>
+                                    <h:outputText class="descrip-reto" value="Andrés #{msj.retoConseguido5}"></h:outputText><!--NOMBRE DEL USUARIO Y TEXTO RANDOM-->
+                                    <br/>
+                                    <h:outputText value="18/10/2016" class="fecha-reto"></h:outputText> <!--FECHA DE RETO CONSEGUIDO-->
+                                </td>
+                                <td>
+                                    <h:graphicImage class="emblemas-lateral" value="resources/img/emblemas/LIDERAZGO.svg" alt="Emblema Horas Extra"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </br>
+                </aside>
+
+                <section>
+                    <div class="usuario">
+                        <div class=" col-md-1">
+                            <a href="#" >
+                                <h:graphicImage class="usuario-top-foto2" style="border: #76FF03 0.4em solid;" value="resources/img/Fotos-Usuarios/mujer7.jpg" alt="Foto del Usuario"/>
+                            </a>
+                        </div>
+
+                        <div class="usuario-top-txt col-md-2"> 
+                            <h:outputText class="puntuacion" value="136 Puntos"></h:outputText> <!--PUNTUACIÓN TOTAL DEL USUARIO-->
+                            <h:outputText class="mejora" value="+ 100%"></h:outputText> <!--PORCENTAJE DE MEJORA-->
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 jcarousel-wrapper">
+                        <div class="jcarousel mi-nivel">
+                            <ul>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/ESTRELLA-PLATA.svg" alt="Medalla Plata"/>
+                                    <h:outputText class="puntuacion-medallas" value="40"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/ESTRELLA-ORO.svg" alt="Medalla Oro"/>
+                                    <h:outputText class="puntuacion-medallas" value="80"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/COPA-BRONCE.svg" alt="Copa Bronce"/>
+                                    <h:outputText class="puntuacion-medallas" value="100"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/COPA-PLATA.svg" alt="Copa Plata"/>
+                                    <h:outputText class="puntuacion-medallas" value="150"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/COPA-ORO.svg" alt="Copa Oro"/>
+                                    <h:outputText class="puntuacion-medallas" value="300"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/MEDALLA-BRONCE.svg" alt="Medalla Bronce"/>
+                                    <h:outputText class="puntuacion-medallas" value="500"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/MEDALLA-PLATA.svg" alt="Medalla Plata"/>
+                                    <h:outputText class="puntuacion-medallas" value="1000"></h:outputText></li>
+                                <li><h:graphicImage class="img-medal" value="resources/img/medallas/MEDALLA-ORO.svg" alt="Medalla Oro"/>
+                                    <h:outputText class="puntuacion-medallas" value="2000"></h:outputText></li>
+                            </ul>
+                        </div>
+
+                        <h:outputLabel class="jcarousel-control-prev" value="&lsaquo;"></h:outputLabel>
+                        <h:outputLabel class="jcarousel-control-next" value="&rsaquo;"></h:outputLabel>
+                    </div> 
+                </section>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <section class="row margen-retos">
+                <div class="col-md-4"></div>
+                <div class="col-md-8 jcarousel-wrapper">
+                    <div class="jcarousel retos">
+                        <ul>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/COMPROMISO.svg" alt="Reto Compromiso"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                        <span class="barra-progreso">70%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/HORAS EXTRA.svg" alt="Reto Horas Extra"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="barra-progreso">20%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/MOVIMIENTOS.svg" alt="Reto Movimientos"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="barra-progreso">100%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/DESVIO TEMPORAL.svg" alt="Reto Desvío Temporal"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
+                                        <span class="barra-progreso">43%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/EXPERIENCIA.svg" alt="Reto Experiencia"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="barra-progreso">80%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos" value="resources/img/emblemas/LIDERAZGO.svg" alt="Reto Liderazgo"/>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%">
+                                        <span class="barra-progreso">63%</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                </div> 
+            </section>      
+        </div>
+        <!--<div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p:chart type="line" model="#{chartView.lineModel1}" style="height:300px;"/>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="container-fluid">
+            <section class="row margen-retos">
+                <div class="col-md-4"></div>
+                <div class="col-md-8 jcarousel-wrapper">
+                    <div class="jcarousel retos">
+                        <ul>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/INICIATIVA.svg" alt="Reto Iniciativa"/>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/TRABAJO_EN_EQUIPO.svg" alt="Reto Trabajo En Equipo"/>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/ENTUSIASMO.svg" alt="Reto Experiencia"/>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/HORAS EXTRA.svg" alt="Reto Desvío Temporal"/>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/EXPERIENCIA.svg" alt="Reto Experiencia"/>
+                            </li>
+                            <li class="margen-img-retos"><h:graphicImage class="img-retos-futuros" value="resources/img/emblemas/COMPROMISO.svg" alt="Reto Liderazgo"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                </div> 
+            </section>      
+        </div> 
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </h:body>
+</html>
+

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"   
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>  
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+        <meta charset="utf-8"></meta>
+        <title>Panel de Administración</title>
+        <meta name="generator" content="Bootply"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+   
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>  
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="estiloPropio.css"></h:outputStylesheet>  
+        
+        <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </h:head>
+
+    <h:body>
+
+        <!-- header -->
+        <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mi Panel de Administración</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                            <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                                <li><a href="#">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <!-- Left column -->
+                    <!--<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Opciones</strong></a>-->
+
+                    <ul class="nav nav-stacked">
+                        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administración <i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <ul class="nav nav-stacked collapse in" id="userMenu">
+                                <li><a href="#"><i class="glyphicon glyphicon-th"></i> Tipo de actividad</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-stats"></i> Retos usuario</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Medalla usuario</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-tower"></i> Medalla almacén</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-usd"></i> Recompensa</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /col-2 -->
+                <div class="col-sm-9">
+
+                    <!-- column 2 -->
+                    <a href="#"><strong><i class="glyphicon glyphicon-dashboard" id="label"></i> Retos</strong></a>
+                    <hr></hr>
+                    <h:form>
+                    <div class="row">
+                        <!-- center left-->
+                        <div class="col-md-4">
+                            <!-- AQUÍ METO MI CONTENIDO-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Retos</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <!--multiselect-->
+                                    <p:multiSelectListbox value="#{beanRetos.RetosSelec}" effect="slide">
+                                            <f:selectItems value="#{beanRetos.Retos}"></f:selectItems>
+                                    </p:multiSelectListbox>
+                                </div>
+                                <!--/panel-body-->
+                            </div>
+                            <!--/panel-->
+                        </div>
+                        <div class="col-md-4">
+                            <!-- AQUÍ METO MI CONTENIDO-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Valores</h4>
+                                </div>
+                                <div class="panel-body">
+                                        Introduce valores para filtrar:
+                                        <br></br>
+                                        <br></br>
+                                        <h:inputText required="required" value="#{beanMedallasUser.xxx}" size="6" id="number"></h:inputText>
+                                            <h:outputLabel for="number" value="Mínimo" style="font-weight:bold"/>             
+                                        <p></p>
+                                        <h:inputText required="required" value="#{beanMedallasUser.xxx}" size="6" maxlength="6"></h:inputText>
+                                            <h:outputLabel for="number" value="Máximo" style="font-weight:bold"/>            
+                                </div>
+                                <!--/panel-body-->
+                            </div>
+                            <!--/panel-->
+                        </div>
+                        <!--/col-->
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="titulo">
+                                    <h4>Fecha</h4></div>
+                                <div class="panel-body">      
+                                            Introduce fechas para filtrar:
+                                            <br></br>
+                                            <br></br>
+                                            <p:outputLabel for="fechaInicio" value="Inicio" />
+                                            <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2" accesskey="true"
+                                                        id="fechaInicio" value="#{calendarView.fechaInicio}" required="requiered" mindate="2016-01-01">
+                                                 <p:ajax event="dateSelect" oncomplete="onDateSelect()" id="calendario"></p:ajax>
+                                            </p:calendar>
+                                            <br></br>
+                                            <p:outputLabel for="fechaFin" value="Fin" />
+                                            <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2" accesskey="true"
+                                                        id="fechaFin" value="#{calendarView.fechaFin}" required="requiered" mindate="fechaInicio"> 
+                                                <p:ajax event="dateSelect" oncomplete="onDateSelect()" id="calendario"></p:ajax>
+                                            </p:calendar> 
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    </h:form> 
+                </div>
+                
+                <div class="row">
+                    <center>
+                        <h:form>
+                        <div class="btn-group btn-group-justified" style="width:300px; margin-left:-9.5%">
+                            <p:commandButton class="btn btn-primary col-sm-3" id="boton" value="Consultar" update="msgs" 
+                            action="#{beanReto.consultaReto}" >
+                                <i class="glyphicon glyphicon-search iconBlanco"></i>
+                            </p:commandButton> 
+                        </div>
+                            <br></br>
+                        <div class="btn-group btn-group-justified" style="width:300px; margin-left:7.5%">
+                            <p:commandButton class="btn btn-primary col-sm-3" id="boton" value="Crear nuevo reto" update="msgs" 
+                                                 actionListener="crearReto.xhtml" icon="glyphicon glyphicon-plus iconBlanco" />
+                                    <i class="glyphicon glyphicon-plus iconBlanco"></i>
+                            </p:commandButton> 
+                        </div>
+                        </h:form>
+                    </center>
+                </div>
+                        <!--/col-span-6-->
+                
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h1>JSF 2 dataTable - MUESTRA DATOS</h1>
+
+                            <h:dataTable value="#{beanReto.mostrarRetos}" var="o"
+                                styleClass="order-table" headerClass="order-table-header" 
+                                rowClasses="order-table-odd-row,order-table-even-row">
+
+                                <h:column>
+                                    <!-- column header -->
+                                    <f:facet name="header">Resultados búsqueda</f:facet>
+                                    <!-- row record -->
+                                    #{o.orderNo} <!--CAMBIAR-->
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Centro</f:facet>
+                                        #{o.centro}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Actividad</f:facet>
+                                        #{o.actividad}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Niveles consecución</f:facet>
+                                        #{o.nivelescon}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Acciones</f:facet>
+                                        #{o.acciones}
+                                </h:column>
+
+                            </h:dataTable>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/col-span-9-->
+            </div>
+        
+        <!-- /Main -->
+
+
+        <div class="modal" id="addWidgetModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Widget</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Add a widget stuff here..</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn">Close</a>
+                        <a href="#" class="btn btn-primary">Save changes</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dalog -->
+        </div>
+</html>
+

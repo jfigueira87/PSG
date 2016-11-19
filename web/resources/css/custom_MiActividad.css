@@ -1,0 +1,200 @@
+ 
+.body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    margin-left: 2em;
+}
+
+.media-object{
+    height: 88px;
+    width: 88px;
+    float: left;  
+    margin-top: 2em;
+}
+
+.foto-ranking{/* cambiado */
+    float:left;
+}
+
+.caja{ /*cambiado*/
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    width: 88px;
+    height: 20px;
+    text-align: center;
+    float:left;
+
+}
+.numero { /* cambiado */
+    position: relative;
+    font: bold 18px Ubuntu, Sans-Serif;
+
+}
+.corona{ /* cambiado */
+   width: 1.3em;
+}
+
+.id{
+    width: 1.3em;
+    height: auto;
+    
+}
+.home{
+    margin-top: 1em;
+}
+
+.encabezado {
+   font-weight: bold;
+   background-color: #14474b ;
+}
+
+.barra{
+   background-color: #219198 ;
+   height: 10.5em;
+}
+ 
+.margen-usuario{
+    padding-left: 0px;
+}
+
+.usuario-top-foto{
+    height: 90px;
+    width: 90px;
+    margin-top: 2.1em;
+    border-radius: 50%;
+    
+}
+.nombre{
+    float: left;
+}
+
+
+.usuario-top-txt{
+    margin-top: 2.3em;
+    font-size: 1.3em;
+    color: white;
+    float: right;
+}
+
+.barra-progreso{
+    color: #14474b;
+    font-weight: bold;
+    float: right;
+}
+
+.nav-tabs > li {
+   float: right;
+   margin-bottom: -1px;
+   background-color: #14474b;
+}
+
+.nav-tabs > li > a {
+   
+   line-height: 1.42857143;
+   border: 0px solid transparent;
+   border-radius: 4px 4px 0 0;
+   color: white;
+}
+
+.nav-tabs > li.active > a {
+   color: #14474b ;
+   cursor: default;
+   background-color: #219198 ;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+   color: #14474b ;
+   cursor: default;
+   background-color: #219198 ;
+   border: 0px solid #ddd;
+}
+
+.nav-tabs > li > a:hover {
+   color: #14474b ;
+}
+
+.nav-tabs {
+   border-bottom: 0px solid #ddd;
+}
+
+.botones{
+    width: 10em;
+}
+.btn-default {
+   color: white;
+   background-color: #14474b ;
+   border: 3px solid white;
+   border-color: white;
+   border-radius: 0;
+   font-size:15px;
+
+   height:35px;
+   line-height: 0px;
+}
+
+.btn-default:hover {
+   color: #14474b ;
+   background-color: #e6e6e6 ;
+   border-color: #adadad ;
+}
+
+.btn-primary {
+   color: #fff;
+   background-color: #219198 ;
+   border: 3px solid white;
+   border-color: #14474b ;
+   border-radius: 0;
+   font-size:15px;
+   width:100px;
+   height:35px;
+   line-height: 0px;
+}
+
+.btn-primary:hover {
+   color: #219198 ;
+   background-color: #e6e6e6 ;
+   border-color: #adadad ;
+}
+
+.img_icono{
+   float: left;
+}
+#select{
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+#futuras{
+    margin-left:50px;
+    padding-right: 50px;
+}
+.gris{
+    color: gray;
+}
+.center-block{
+    text-align: center;
+}
+
+.grafCardio{
+    height: 30%;
+    width: 30%;
+}
+.grafRosco{
+    height: 30%;
+    width: 30%;
+}
+.boton1{
+    float: left;
+}
+.boton2{
+    padding-left: 30%;
+}

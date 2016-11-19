@@ -1,0 +1,9 @@
+
+.tbody{
+  overflow-y: scroll;      
+  height: 350px;            
+  width: 100%;
+  position: absolute;
+  background-color: red;
+  text-justify: inter-word;
+}

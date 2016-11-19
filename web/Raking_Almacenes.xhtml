@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ranking Alamcenes</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+        <h:outputStylesheet library="css" name="custom_Usuarios.css"></h:outputStylesheet>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <f:loadBundle basename="textos.mensajes" var="msj"/>
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/custom.js"></script>
+    </h:head>
+    <h:body>
+
+        <f:facet name="last">
+            <h:outputStylesheet library="resources" name="css/custom_Graficas2.css"></h:outputStylesheet>
+        </f:facet>
+
+        <!--BARRA SUPERIOR-->
+        <nav class="encabezado">
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#"  role="tab" data-toggle="tab"><h:graphicImage class="id" value="resources/img/icons/user.png"/></a></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgUsuarios}"></h:outputText></h:outputLink></li>
+                    <li role="presentation" class="active"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.rkgAlmacenes}"></h:outputText></h:outputLink></li>
+                    <li role="presentation"><h:outputLink role="tab" value="#"><h:outputText value="#{msj.miActividad}"></h:outputText></h:outputLink></li>  
+                </ul>
+            </div>
+        </nav>
+        <div class="barra container-fluid">
+            <div class="row">
+                <div class="tab-content">
+                    <div  class="col-md-2">
+                        <h:graphicImage class="logo" value="resources/img/icons/COMMUNITY2.svg" alt="Logo Comunidad"/>
+                    </div>
+                    <div class="col-md-1 botones">
+                        <div role="tabpanel" class="tab-pane active home">
+                            <h:commandButton  class="btn btn-default btn-lg btn-block" value="#{msj.diario}"></h:commandButton>
+                            <h:commandButton  class="btn btn-default btn-lg btn-block" value="#{msj.semanal}"></h:commandButton>
+                            <h:commandButton  class="btn btn-primary btn-lg btn-block" value="#{msj.mensual}"></h:commandButton>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">  
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo02.jpg" alt="Foto del Empleado 1"/>
+                        <div class="caja"><h:graphicImage class="corona" value="resources/img/icons/corona.svg"/></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo03.jpg" alt="Foto de la Empleada 2"/>
+                        <div class="caja"><h:outputText class="numero" value="2"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo04.jpg" alt="Foto del Empleado 3"/>
+                        <div class="caja"><h:outputText class="numero" value="3"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo05.jpg" alt="Foto del Empleado 4"/>
+                        <div class="caja"><h:outputText class="numero" value="4"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo06.jpg" alt="Foto del Empleado 5"/>
+                        <div class="caja"><h:outputText class="numero" value="5"></h:outputText></div>
+                    </div>
+                    <div  class="foto-ranking">
+                        <h:graphicImage class="media-object" value="resources/img/empresas/Logo07.jpg" alt="Foto del Empleado 6"/>
+                        <div class="caja"><h:outputText class="numero" value="6"></h:outputText></div>
+                    </div>            
+                </div>  
+                <div class="margen-usuario">
+                    <div class=" col-md-5">
+                        <h:graphicImage class="usuario-top-foto" style="border: #14474b 0.4em solid;" value="resources/img/empresas/Logo01.jpg" alt="Foto del Usuario"/> <!--CAMBIAR EL COLOR DEL BORDE (SI MEJORA VERDE, SI EMPEORA ROJO)-->   
+                    </div>
+                    <div class="usuario-top-txt col-md-2">
+                        <h:outputText value="Quental"></h:outputText> <!--AQUÍ HAY QUE SELECCIONAR EL NOMBRE DEL ALMACEN-->
+                        <div class="progress barratop">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><!--PORCENTAJE DE PROGRESO-->
+                                <h:outputText class="barra-progreso" value="Nº17"></h:outputText><!--POSICIÓN EN EL RANKING-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!--PARTE INFERIOR        -->
+
+
+        <div class="container-fluid">
+            <div class="row barra-bottom espacio"></div>
+            <div class="row barra-bottom center-aligned">
+                <h:outputText class="col-md-1 titulo-centro" value="#{msj.centro}"></h:outputText>
+                <h:selectOneMenu class="col-md-2 select-menu" value="#">
+                    <f:selectItem itemValue="1" itemLabel="Item 1" />
+                    <f:selectItem itemValue="2" itemLabel="Item 2" />
+                    <f:selectItem itemValue="3" itemLabel="Item 3" />
+                    <f:selectItem itemValue="4" itemLabel="Item 4" />
+                </h:selectOneMenu>
+
+                <h:outputText class="col-md-1 titulo-centro" value="#{msj.desde}"></h:outputText>
+                <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2"> 
+                    <p:ajax event="dateSelect" oncomplete="onDateSelect()"></p:ajax>
+                </p:calendar>
+
+                <h:outputText class="col-md-1 titulo-centro" value="#{msj.hasta}"></h:outputText>
+                <p:calendar pattern="dd/MM/yyyy" widgetVar="cal" class="col-md-2 "> 
+                    <p:ajax event="dateSelect" oncomplete="onDateSelect()"></p:ajax>
+                </p:calendar>
+            </div>
+            <div class="row barra-bottom espacio"></div>
+
+            <!--            GRAFICAS                -->
+
+            <!--            GRAFICA LINEAL          -->
+
+            <div class="clearfix"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <aside class="col-md-4 grafica">
+                        <h:form>
+                            <p:chart type="line" model="#{linealBean.lineModel1}" style="height:300px;"/>            
+                        </h:form>
+                    </aside>
+
+                    <!--                GRAFICA DONUT         -->
+                    <div class="col-md-8">
+                        <h:outputText class="center-block titulo-centro centro" value="#{msj.movimientos}"></h:outputText>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p:chart type="donut" model="#{donutBean2.donutModel1}" style="width:350px;height:260px;"/>
+                            </div>
+                            <div class="col-md-6">
+                                <p:chart type="donut" model="#{donutBean3.donutModel1}" style="width:350px;height:260px;"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-3">
+                                <p:chart type="donut" model="#{donutBean4.donutModel1}" style="width:350px;height:260px;"/>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="row center-aligned"> 
+                <div class="col-md-1 col-md-offset-2">
+                    <h:graphicImage class="media-object" value="resources/img/empresas/Logo01.jpg" alt="Logo01" style="border: #14474b 0.4em solid;"></h:graphicImage>
+                </div>
+                <div class="col-md-1">  
+                    <h:outputText class="titulo-empresa" value="Quental"></h:outputText>    
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/1.svg" alt="vacío"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/2.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/5.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/10.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/25.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:outputText class="titulo-empresa positivo" value="+ 25%"></h:outputText>
+                    <h:outputText class="titulo-empresa negativo" style="display: none" value="número"></h:outputText>
+                </div>
+            </div>
+            <div class="row center-aligned">
+                <div class="col-md-1 col-md-offset-2">
+                    <h:graphicImage class="media-object" value="resources/img/empresas/Logo02.jpg" alt="Logo02" style="border: #14474b 0.4em solid;"></h:graphicImage>
+                </div>
+                <div class="col-md-1">  
+                    <h:outputText class="titulo-empresa" value="Empresa01"></h:outputText>    
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/1.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/2.svg" alt="vacío"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/5.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/10.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/25.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:outputText class="titulo-empresa positivo" value="+ 12.5%"></h:outputText>
+                    <h:outputText class="titulo-empresa negativo" style="display: none" value="número"></h:outputText>
+                </div>
+            </div>
+            <div class="row center-aligned">
+                <div class="col-md-1 col-md-offset-2">
+                    <h:graphicImage class="media-object" value="resources/img/empresas/Logo04.jpg" alt="Logo03" style="border: #14474b 0.4em solid;"></h:graphicImage>
+                </div>
+                <div class="col-md-1">  
+                    <h:outputText class="titulo-empresa" value="Empresa02"></h:outputText>    
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/1.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/2.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/5.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/10.svg" alt="vacío" style="display: none"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:graphicImage class="media-object ver" value="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></h:graphicImage>
+                    <h:graphicImage class="media-object oculto" value="resources/img/puntos/25.svg" alt="vacío"></h:graphicImage>
+                </div>
+                <div class="col-md-1">
+                    <h:outputText class="titulo-empresa positivo" value="número" style="display: none"></h:outputText>
+                    <h:outputText class="titulo-empresa negativo" value="- 10%"></h:outputText>
+                </div>     
+            </div>
+        </div>
+
+    </h:body>
+</html>
+
